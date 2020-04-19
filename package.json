@@ -1,0 +1,27 @@
+{
+  "name": "annotate-pinyin-with-chinese",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "check": "gts check",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "fix": "gts fix",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "posttest": "npm run check",
+    "unihan": "npm run unihan:download && npm run unihan:unzip && npm run unihan:build",
+    "unihan:download": "[[ -f ./cache/Unihan.zip ]] || curl -o ./cache/Unihan.zip https://www.unicode.org/Public/UCD/latest/ucd/Unihan.zip",
+    "unihan:unzip": "unzip -n ./cache/Unihan.zip -d ./cache",
+    "unihan:build": "npm run compile && node src/script/unihan-build.js"
+  },
+  "author": "Haochi Chen",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chrome": "0.0.104",
+    "@types/node": "^10.0.3",
+    "gts": "^2.0.0",
+    "typescript": "~3.8.0"
+  }
+}

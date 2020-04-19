@@ -1,0 +1,32 @@
+{
+  "name": "Annotate Chinese with Pinyin",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Annotate Chinese with Pinyin",
+  "homepage_url": "http://extensionizr.com",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "browser_action": {
+    "default_title": "Annotate Chinese on Current Page with Pinyin",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "scripts": [
+      "src/browser/background.js"
+    ],
+    "persistent": true
+  },
+  "permissions": [
+    "contextMenus",
+    "tabs",
+    "https://*/*",
+    "http://*/*"
+  ]
+}

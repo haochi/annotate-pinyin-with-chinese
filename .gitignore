@@ -1,0 +1,5 @@
+*.js
+unihan.json
+node_modules
+cache
+!cache/.keep
