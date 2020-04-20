@@ -3,6 +3,7 @@
   "compilerOptions": {
     "lib": ["es2018", "DOM"],
     "rootDir": ".",
+    "outDir": "build",
     "sourceMap": false,
     "declaration": false
   },

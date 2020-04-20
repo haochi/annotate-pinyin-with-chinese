@@ -1,5 +1,5 @@
-*.js
-unihan.json
 node_modules
+build
+build.zip
 cache
 !cache/.keep

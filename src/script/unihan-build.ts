@@ -23,7 +23,7 @@ readInterface.on('line', line => {
 readInterface.on('close', () => {
   console.log(`loaded ${Object.keys(characterToPinyin).length} character.`);
   fs.writeFileSync(
-    './src/browser/unihan.json',
+    './build/src/browser/unihan.json',
     JSON.stringify(characterToPinyin),
     {
       encoding: 'utf-8',

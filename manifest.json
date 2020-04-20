@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "manifest_version": 2,
   "description": "Annotate Chinese with Pinyin",
-  "homepage_url": "http://extensionizr.com",
+  "homepage_url": "https://github.com/haochi/annotate-pinyin-with-chinese",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
@@ -26,7 +26,6 @@
   "permissions": [
     "contextMenus",
     "tabs",
-    "https://*/*",
-    "http://*/*"
+    "activeTab"
   ]
 }

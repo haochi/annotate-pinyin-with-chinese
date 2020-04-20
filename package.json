@@ -6,6 +6,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "check": "gts check",
     "clean": "gts clean",
+    "build": "npm run compile && npm run unihan:build && npm run build:copy",
+    "build:copy": "cp -r manifest.json README.md icons ./build",
+    "build:zip": "rm -f ./build.zip && (cd ./build && zip -r ../build.zip .)",
     "compile": "tsc",
     "fix": "gts fix",
     "prepare": "npm run compile",
@@ -13,8 +16,8 @@
     "posttest": "npm run check",
     "unihan": "npm run unihan:download && npm run unihan:unzip && npm run unihan:build",
     "unihan:download": "[[ -f ./cache/Unihan.zip ]] || curl -o ./cache/Unihan.zip https://www.unicode.org/Public/UCD/latest/ucd/Unihan.zip",
-    "unihan:unzip": "unzip -n ./cache/Unihan.zip -d ./cache",
-    "unihan:build": "npm run compile && node src/script/unihan-build.js"
+    "unihan:unzip": "[[ -f ./cache/Unihan_Readings.txt ]] || unzip -n ./cache/Unihan.zip -d ./cache",
+    "unihan:build": "npm run compile && node ./build/src/script/unihan-build.js"
   },
   "author": "Haochi Chen",
   "license": "ISC",
