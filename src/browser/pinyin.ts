@@ -73,7 +73,7 @@
     );
     let node = walker.nextNode();
     while (node) {
-      if (node.parentNode!.nodeName !== 'RUBY') {
+      if (node.parentNode!.nodeName !== 'RUBY' && node.parentNode!.nodeName !== 'SCRIPT') {
         if (hasChinese(node.nodeValue!)) {
           textNodes.push(node);
         }
