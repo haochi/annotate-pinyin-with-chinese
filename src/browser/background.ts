@@ -34,16 +34,18 @@ const fetchCharactersMapping = (
   return out;
 };
 
-chrome.runtime.onInstalled.addListener(() => {
+const main = () => {
   setupContextMenu();
 
   chrome.browserAction.onClicked.addListener(tab => {
     executePinyinScript(tab.id!);
   });
-});
+};
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   const {characters} = message as {characters: string[]};
   console.log(characters.length);
   sendResponse(fetchCharactersMapping(characters));
 });
+
+main();
