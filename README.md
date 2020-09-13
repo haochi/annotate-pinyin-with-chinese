@@ -7,6 +7,7 @@ Chrome extension for annotating Chinese with Pinyin.
 
 ## Build
 
+* `npm run unihan`: To download the [Unihan data files](https://unicode.org/charts/unihan.html).
 * `npm run build`: generates the extension in `build` directory that can be loaded for testing
 * `npm run build:zip`: packages the extension in `build.zip` for publishing
 
